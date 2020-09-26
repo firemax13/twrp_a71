@@ -14,6 +14,15 @@
 # limitations under the License.
 #
 
+# Release name
+PRODUCT_RELEASE_NAME := a71n
+
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
+
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
@@ -21,9 +30,9 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := omni_a71
-PRODUCT_DEVICE := a71
-PRODUCT_MODEL := SM-A515F
+PRODUCT_NAME := omni_a71n
+PRODUCT_DEVICE := a71n
+PRODUCT_MODEL := SM-A715F
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_GMS_CLIENTID_BASE := android-samsung

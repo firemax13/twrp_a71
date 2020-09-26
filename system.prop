@@ -1,1 +1,6 @@
 ro.boot.dynamic_partitions = true
+ro.display.series=Samsung A71
+sys.usb.controller=a600000.dwc3
+sys.usb.rndis.func.name=rndis_bam
+sys.usb.rmnet.func.name=rmnet_bam
+ro.boot.bootdevice=1d8400.ufshc

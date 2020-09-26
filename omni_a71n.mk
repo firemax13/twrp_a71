@@ -29,6 +29,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a71n/recovery/root,recovery/root)
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := omni_a71n
 PRODUCT_DEVICE := a71n

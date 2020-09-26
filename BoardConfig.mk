@@ -11,7 +11,8 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/samsung/a71
+DEVICE_PATH := device/samsung/a71n
+ALLOW_MISSING_DEPENDENCIES := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -34,7 +35,7 @@ ENABLE_SCHEDBOOST := true
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := msmnile
+TARGET_BOOTLOADER_BOARD_NAME := sm6150
 TARGET_NO_BOOTLOADER := true
 
 # File systems
@@ -56,14 +57,14 @@ BOARD_RAMDISK_OFFSET := 0x02000000
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := msmnile
+TARGET_BOARD_PLATFORM := sm6150
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno618
-QCOM_BOARD_PLATFORMS += msmnile
+QCOM_BOARD_PLATFORMS += sm6150
 
 # Recovery
-TARGET_OTA_ASSERT_DEVICE := a71
+TARGET_OTA_ASSERT_DEVICE := a71n
 BOARD_HAS_LARGE_FILESYSTEM := true
-BOARD_HAS_NO_SELECT_BUTTON := true
+# BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
 TARGET_COPY_OUT_VENDOR := vendor
 PLATFORM_SECURITY_PATCH := 2020-08-01
@@ -87,7 +88,8 @@ TW_MAX_BRIGHTNESS := 425
 TW_DEFAULT_BRIGHTNESS := 255
 TW_Y_OFFSET := 110
 TW_H_OFFSET := -110
-TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone17/temp
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone17/temp"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_NTFS_3G := true
